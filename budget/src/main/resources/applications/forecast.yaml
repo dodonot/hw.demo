@@ -1,0 +1,41 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "swagger definition for com.service.forecast.controller.ForecastImpl"
+  x-java-interface: "cse.gen.weathermap.forecast.forecast.ForecastImplIntf"
+basePath: "/budget"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /show:
+    get:
+      operationId: "getForecast"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "city"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+  /budget:
+    get:
+      operationId: "getForecast"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "city"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"

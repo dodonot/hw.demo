@@ -1,0 +1,94 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "swagger definition for com.service.forecast.controller.ForecastImpl"
+  x-java-interface: "cse.gen.weathermap.forecast.forecast.ForecastImplIntf"
+basePath: "/budget"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /getBill:
+    get:
+      summary: "根据指标单据编号获取指标内容信息"
+      description: "test: 仅 vouid = 001,002 有正确返回"
+      operationId: "getBill"
+      parameters:
+      - name: "vouid"
+        in: "query"
+        description: "指标编号"
+        required: true
+        type: "String"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            $ref: "#/definitions/BudgetDto"
+
+  /show:
+    get:
+      operationId: "getForecast"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "city"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+  /forecast:
+    get:
+      operationId: "getForecast"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "city"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+
+definitions:
+  BudgetDto:
+    type: "object"
+    properties:
+      vouId:
+        type: "string"
+      bsCode:
+        type: "string"
+      bsName:
+        type: "string"
+      agencyCode:
+        type: "string"
+      agencyName:
+        type: "string"
+      fileName:
+        type: "string"
+      pkCode:
+        type: "string"
+      pkName:
+        type: "string"
+      bisCode:
+        type: "string"
+      bisName:
+        type: "string"
+      mkCode:
+        type: "string"
+      mkName:
+        type: "string"
+      adjustKind:
+        type: "integer"
+        format: "int32"
+      budgetMoney:
+        type: "number"
+        format: "double"
+    x-java-class: "com.ufgov.budget.BudgetDto"
